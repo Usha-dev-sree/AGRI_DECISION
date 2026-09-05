@@ -1,0 +1,86 @@
+:root {
+  /* Premium Agriculture Color Palette */
+  --color-primary: #15803d; /* Vibrant Emerald Green */
+  --color-primary-light: #22c55e;
+  --color-primary-dark: #0f5229;
+  --color-primary-glow: rgba(34, 197, 94, 0.35);
+  
+  --color-secondary: #f59e0b; /* Golden Harvest Amber */
+  --color-secondary-light: #fbbf24;
+  --color-secondary-dark: #d97706;
+  
+  --color-accent: #06b6d4; /* Vibrant Cyan Sky */
+  --color-accent-light: #22d3ee;
+  
+  --color-background: #091e13; /* Deep Lush Forest Dark */
+  --color-surface: rgba(255, 255, 255, 0.92);
+  --color-surface-dark: rgba(15, 28, 20, 0.85);
+  --color-surface-glass: rgba(255, 255, 255, 0.88);
+
+  --color-border: rgba(229, 231, 235, 0.8);
+  --color-border-glow: rgba(34, 197, 94, 0.3);
+  
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-light: #f8fafc;
+  
+  --color-error: #ef4444;
+  --color-error-bg: rgba(239, 68, 68, 0.1);
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Typography */
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  
+  /* Borders & Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  
+  /* Shadows & Glass Effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 25px -5px rgba(0, 30, 15, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 40, 20, 0.16), 0 0 15px rgba(34, 197, 94, 0.1);
+  --shadow-glow: 0 0 25px rgba(34, 197, 94, 0.3);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-blur: blur(16px);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark Theme Overrides */
+.dark-theme {
+  --color-surface: rgba(15, 28, 20, 0.88);
+  --color-surface-dark: rgba(9, 20, 14, 0.92);
+  --color-surface-glass: rgba(15, 28, 20, 0.85);
+
+  --color-border: rgba(34, 197, 94, 0.25);
+  --color-border-glow: rgba(34, 197, 94, 0.5);
+
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+
+  --glass-bg: rgba(12, 26, 18, 0.85);
+  --glass-border: rgba(34, 197, 94, 0.3);
+  --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(34, 197, 94, 0.15);
+}

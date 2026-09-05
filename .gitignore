@@ -1,0 +1,50 @@
+# === Java / Spring Boot ===
+backend/target/
+backend/*.jar
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# === Node / React ===
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.production
+
+# === Python ===
+**/__pycache__/
+*.py[cod]
+*$py.class
+ml-service/.venv/
+ml-service/venv/
+ml-service/*.egg-info/
+
+# === Datasets (large files) ===
+datasets/
+
+# === IDE ===
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# === Environment ===
+.env
+*.env.local
+*.env.production
+
+# === Logs ===
+*.log
+logs/
+
+# === ML Models (large) ===
+ml-service/trained_models/*.joblib
+ml-service/trained_models/*.pkl

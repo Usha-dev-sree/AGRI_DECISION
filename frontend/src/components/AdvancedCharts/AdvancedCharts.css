@@ -1,0 +1,103 @@
+.adv-charts-wrap {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 15px 35px -5px rgba(0,30,15,0.12);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.adv-charts-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 var(--space-2) 0;
+  color: #0f5229;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.adv-charts-subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-5);
+}
+
+.chart-tab-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: var(--space-3);
+}
+
+.chart-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  background: #f8fafc;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.chart-tab:hover {
+  background: rgba(22,163,74,0.08);
+  color: #16a34a;
+}
+
+.chart-tab.active {
+  background: #15803d;
+  color: #ffffff;
+  border-color: #15803d;
+  box-shadow: 0 4px 12px rgba(21,128,61,0.3);
+}
+
+.chart-area {
+  width: 100%;
+  height: 380px;
+}
+
+/* KPI strip */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.kpi-card {
+  background: linear-gradient(135deg, var(--kpi-from) 0%, var(--kpi-to) 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.kpi-card .kpi-val {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.kpi-card .kpi-lbl {
+  font-size: 0.78rem;
+  opacity: 0.88;
+  font-weight: 600;
+}
+
+.kpi-card .kpi-change {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  font-weight: 700;
+  opacity: 0.95;
+}

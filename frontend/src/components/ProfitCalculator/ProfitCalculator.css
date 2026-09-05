@@ -1,0 +1,115 @@
+.profit-calculator {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 15px 35px -5px rgba(0, 30, 15, 0.12);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.calc-title-group h2 {
+  margin: 0 0 var(--space-2) 0;
+  color: #0f5229;
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calc-title-group p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-6);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.calc-inputs-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.calc-result-panel {
+  background: linear-gradient(135deg, #0f5229 0%, #15803d 100%);
+  color: white;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(21, 128, 61, 0.3);
+}
+
+.result-stat-hero {
+  margin-bottom: var(--space-6);
+}
+
+.result-stat-hero .stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.result-stat-hero .profit-number {
+  font-size: 2.75rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: #fbbf24;
+  margin: 4px 0;
+}
+
+.result-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  background: rgba(255, 255, 255, 0.12);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+
+.breakdown-item .b-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.breakdown-item .b-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.progress-bar-wrap {
+  background: rgba(255, 255, 255, 0.2);
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #fbbf24;
+  border-radius: 5px;
+  transition: width 0.4s ease-out;
+}
+
+@media (max-width: 900px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+}

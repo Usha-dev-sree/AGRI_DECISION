@@ -1,0 +1,72 @@
+.market-widget {
+  padding: var(--space-6);
+  border-radius: 12px;
+  background: white;
+  margin-bottom: var(--space-6);
+}
+
+.market-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.market-header h3 {
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.crop-select {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.crop-select:focus {
+  border-color: var(--color-primary);
+}
+
+.market-loading, .market-empty {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.market-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.market-table th, .market-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.market-table th {
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.market-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.modal-price {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
