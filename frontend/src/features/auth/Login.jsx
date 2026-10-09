@@ -28,9 +28,10 @@ const Login = () => {
         
         const role = user?.role ? String(user.role).toUpperCase().replace(/^ROLE_/, '').trim() : '';
         
-        // Redirect based on role
-        if (role === 'ADMIN' || role === 'GOVT_OFFICER') {
+        if (role === 'ADMIN') {
           navigate('/admin/dashboard');
+        } else if (role === 'GOVT_OFFICER') {
+          navigate('/govt/dashboard');
         } else if (role === 'DEALER') {
           navigate('/dealer/dashboard');
         } else if (role === 'CONSUMER') {

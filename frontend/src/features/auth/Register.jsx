@@ -37,7 +37,8 @@ const Register = () => {
         login(user, accessToken, refreshToken);
         
         const role = user?.role ? String(user.role).toUpperCase().replace(/^ROLE_/, '').trim() : '';
-        if (role === 'ADMIN' || role === 'GOVT_OFFICER') navigate('/admin/dashboard');
+        if (role === 'ADMIN') navigate('/admin/dashboard');
+        else if (role === 'GOVT_OFFICER') navigate('/govt/dashboard');
         else if (role === 'DEALER') navigate('/dealer/dashboard');
         else if (role === 'CONSUMER') navigate('/consumer/dashboard');
         else navigate('/farmer/dashboard');
@@ -125,9 +126,10 @@ const Register = () => {
               }}
             >
               <option value="FARMER">Farmer</option>
-              <option value="ADMIN">Admin</option>
+              <option value="GOVT_OFFICER">Government Officer</option>
               <option value="DEALER">Dealer</option>
               <option value="CONSUMER">Consumer</option>
+              <option value="ADMIN">Admin</option>
             </select>
           </div>
           
