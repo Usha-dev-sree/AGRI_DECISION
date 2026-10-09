@@ -76,11 +76,20 @@ public class SecurityConfig {
                 ).permitAll()
                 // Health check
                 .requestMatchers("/actuator/**", "/health").permitAll()
-                // Role-protected endpoints
+                // Crops and market data are read-only public (used in consumer/farmer views)
+                .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/v1/crops/**").permitAll()
+                .requestMatchers(org.springframework.http.HttpMethod.GET, "/api/v1/market/**").permitAll()
+                // Admin has access to all endpoints
                 .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                .requestMatchers("/api/v1/farmer/**").hasRole("FARMER")
-                .requestMatchers("/api/v1/dealer/**").hasRole("DEALER")
-                .requestMatchers("/api/v1/consumer/**").hasRole("CONSUMER")
+                // Govt Officer dashboard
+                .requestMatchers("/api/v1/govt/**").hasAnyRole("GOVT_OFFICER", "ADMIN")
+                // Farmer endpoints — farmer AND admin
+                .requestMatchers("/api/v1/farmer/**").hasAnyRole("FARMER", "ADMIN")
+                // Dealer endpoints — dealer AND admin
+                .requestMatchers("/api/v1/dealer/**").hasAnyRole("DEALER", "ADMIN")
+                // Consumer endpoints — consumer AND admin
+                .requestMatchers("/api/v1/consumer/**").hasAnyRole("CONSUMER", "ADMIN")
+                // All other requests must be authenticated
                 .anyRequest().authenticated()
             );
 

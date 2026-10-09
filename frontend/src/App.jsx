@@ -6,6 +6,7 @@ import FarmerDashboard from './layouts/FarmerDashboard';
 import AdminDashboard from './layouts/AdminDashboard';
 import DealerDashboard from './layouts/DealerDashboard';
 import ConsumerDashboard from './layouts/ConsumerDashboard';
+import GovtOfficerDashboard from './layouts/GovtOfficerDashboard';
 import AiAssistant from './components/AiAssistant/AiAssistant';
 import Button from './components/Button/Button';
 import LandsPage from './pages/farmer/LandsPage';
@@ -66,7 +67,8 @@ const normalizeRole = (role) => {
 const DashboardRedirect = () => {
   const { user } = useAuthStore();
   const role = normalizeRole(user?.role);
-  if (role === 'ADMIN' || role === 'GOVT_OFFICER') return <Navigate to="/admin/dashboard" replace />;
+  if (role === 'ADMIN') return <Navigate to="/admin/dashboard" replace />;
+  if (role === 'GOVT_OFFICER') return <Navigate to="/govt/dashboard" replace />;
   if (role === 'FARMER') return <Navigate to="/farmer/dashboard" replace />;
   if (role === 'DEALER') return <Navigate to="/dealer/dashboard" replace />;
   if (role === 'CONSUMER') return <Navigate to="/consumer/dashboard" replace />;
@@ -174,6 +176,15 @@ function App() {
         />
 
         <Route 
+          path="/dealer" 
+          element={
+            <ProtectedRoute allowedRoles={['DEALER', 'ADMIN']}>
+              <Navigate to="/dealer/dashboard" replace />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
           path="/dealer/dashboard" 
           element={
             <ProtectedRoute allowedRoles={['DEALER', 'ADMIN']}>
@@ -183,10 +194,37 @@ function App() {
         />
 
         <Route 
+          path="/consumer" 
+          element={
+            <ProtectedRoute allowedRoles={['CONSUMER', 'ADMIN']}>
+              <Navigate to="/consumer/dashboard" replace />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
           path="/consumer/dashboard" 
           element={
             <ProtectedRoute allowedRoles={['CONSUMER', 'ADMIN']}>
               <ConsumerDashboard />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
+          path="/govt/dashboard" 
+          element={
+            <ProtectedRoute allowedRoles={['GOVT_OFFICER', 'ADMIN']}>
+              <GovtOfficerDashboard />
+            </ProtectedRoute>
+          } 
+        />
+
+        <Route 
+          path="/govt" 
+          element={
+            <ProtectedRoute allowedRoles={['GOVT_OFFICER', 'ADMIN']}>
+              <Navigate to="/govt/dashboard" replace />
             </ProtectedRoute>
           } 
         />

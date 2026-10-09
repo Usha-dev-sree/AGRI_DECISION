@@ -94,6 +94,22 @@ export const cropApi = {
 export const geographyApi = {
   getStates: () => api.get('/geography/states'),
   getDistricts: (stateId) => api.get(`/geography/states/${stateId}/districts`),
+  getTaluks: (districtId) => api.get(`/geography/districts/${districtId}/taluks`),
+};
+
+export const dealerApi = {
+  getMyProducts: () => api.get('/dealer/products'),
+  createProduct: (data) => api.post('/dealer/products', data),
+  updateProduct: (id, data) => api.put(`/dealer/products/${id}`, data),
+  deleteProduct: (id) => api.delete(`/dealer/products/${id}`),
+};
+
+export const consumerApi = {
+  getMarketplace: (keyword) => api.get('/consumer/marketplace', { params: keyword ? { keyword } : {} }),
+};
+
+export const govtApi = {
+  getDashboard: () => api.get('/govt/dashboard'),
 };
 
 export default api;
